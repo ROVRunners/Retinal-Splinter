@@ -1,0 +1,28 @@
+The system should execute as follows:
+	
+	Scan for ROVs and give options for which to load from.
+	Load the ROV file from a scene.
+	Scan for tangibles and ask if you want to update loaded ROV components if version numbers don't match up.
+	Provide options for modifying the ROV.
+	ROV is optionally saved to a file.
+	Attempt to aquire a connection to the ROV using the loaded communication module
+	Enter test mode to make sure all systems are functioning.
+	Upon entering, tell all modules to initialize and send any initialization commands necessary
+	Launch the mission (start the mission timer).
+	
+	Loop:
+		Load inputs and sensor data from the ROV into a DataPacket array on rov.gd.
+		Poll all sensor modules to update variables and GUI elements based on the returned sensor data.
+		Use Controllers to process surface inputs and DataPackets (controller input mixing, PIDs, autonomous)
+		Controllers optionally command specific modules to perform non-mobility-based actions like toggling claws and moving servos.
+		Mix over-all motor commands in the global then the relative control mixers (combining overlapping controller, PID, and autonomous commands)
+		Send commands to the specified mobility modules
+		Modules have the opportunity to modify them as needed before sending them to the ROV command queue
+		The currently active comm protocol sends all listed commands down.
+		Data packets are cleared in ppreparation for the next round
+		Loop restarts
+
+
+
+Controllers output desired vectors and ROV commands
+Add an on-screen checklist for mission tasks. Each task should have built-in sequential stopwatches.

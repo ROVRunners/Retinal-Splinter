@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bfvr4rwibdio5"]
+
+[ext_resource type="Script" uid="uid://cx16ypm3lir1d" path="res://abstract/rovs/rov.gd" id="1_ypbqn"]
+[ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_modules/command_module.gd" id="2_xa21r"]
+[ext_resource type="Script" uid="uid://b6fd8wsp12gun" path="res://abstract/modules/thruster.gd" id="3_xa21r"]
+[ext_resource type="Script" uid="uid://djsw4hhfy3gdw" path="res://abstract/pins/gpio_pin.gd" id="4_7jhkn"]
+
+[node name="ROV" type="Node" unique_id=320604600]
+script = ExtResource("1_ypbqn")
+
+[node name="CommandModule" type="Node" parent="." unique_id=1559274447 node_paths=PackedStringArray("compatible_comms")]
+script = ExtResource("2_xa21r")
+compatible_cmds = Array[int]([0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+compatible_comms = [null, null]
+metadata/_custom_type_script = "uid://c88nems0ixlwq"
+
+[node name="Thruster" type="Node" parent="CommandModule" unique_id=1085004114 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+pin = NodePath("GPIOPin")
+microseconds_default = 1500
+signal_upper_bound = 1900
+signal_lower_bound = 1100
+microseconds = 1500
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[node name="GPIOPin" type="Node" parent="CommandModule/Thruster" unique_id=676845080]
+script = ExtResource("4_7jhkn")
+pin_number = 4
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
