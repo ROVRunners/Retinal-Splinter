@@ -3,3 +3,4 @@
 /android/
 abstract/buses/abstract_bus.gd.uid
 .editorconfig
+*.tmp

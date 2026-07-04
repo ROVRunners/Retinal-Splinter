@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://qc4fek14af38"]
+
+[node name="UserInterfaceRoot" type="Control" unique_id=1163401179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ROVChooser" type="Control" parent="." unique_id=1298513723]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ComponentList" type="Control" parent="." unique_id=392279321]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ComponentList2" type="Control" parent="." unique_id=512691249]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

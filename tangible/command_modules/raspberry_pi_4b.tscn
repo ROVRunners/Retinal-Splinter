@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://chjflh1gmmj04"]
+
+[ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_modules/command_module.gd" id="1_1groy"]
+[ext_resource type="Script" uid="uid://0ngocnvhm0ww" path="res://abstract/comm_protocols/ethernet/ether_mqtt_comms.gd" id="2_530nk"]
+[ext_resource type="Script" uid="uid://djsw4hhfy3gdw" path="res://abstract/pins/gpio_pin.gd" id="3_1fhwu"]
+
+[node name="RaspberryPi4b" type="Node" unique_id=1371071823]
+script = ExtResource("1_1groy")
+metadata/_custom_type_script = "uid://c88nems0ixlwq"
+
+[node name="MQTTComms" type="Node" parent="." unique_id=62904959]
+script = ExtResource("2_530nk")
+metadata/_custom_type_script = "uid://0ngocnvhm0ww"
+
+[node name="GPIOPin0" type="Node" parent="." unique_id=1152183230]
+script = ExtResource("3_1fhwu")
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin1" type="Node" parent="." unique_id=762755553]
+script = ExtResource("3_1fhwu")
+pin_number = 1
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin2" type="Node" parent="." unique_id=1856437419]
+script = ExtResource("3_1fhwu")
+pin_number = 2
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 7, 17])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"

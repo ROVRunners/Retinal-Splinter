@@ -1,1 +1,2 @@
+class_name AbstractController
 extends Node

@@ -13,8 +13,8 @@ extends Node
 ## What the pin is being used for.
 @export var mode: GPIOType
 ## What the pin can be used for.
-@export var compatible_mode: GPIOType
-var owners: Array[abstract]
+@export var compatible_modes: Array[GPIOType]
+var owners: Array
 
 enum GPIOType {
 	NONE = 0,

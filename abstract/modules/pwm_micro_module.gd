@@ -14,11 +14,13 @@ var _microseconds: int = microseconds_default
 		return _signal_upper
 	set (val):
 		_signal_upper = val
+		_microseconds = _microseconds
 @export var signal_lower_bound: int:
 	get:
 		return _signal_lower
 	set (val):
 		_signal_lower = val
+		_microseconds = _microseconds
 
 @export var microseconds: int:
 	get:
