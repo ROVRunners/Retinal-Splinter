@@ -1,9 +1,17 @@
+@icon("uid://du0r7svwmv51l")
 @abstract
 class_name AbstractModule
 extends Node
 
 
+@export_category("Module Base")
+## The name of the type of module which can be instanced multiple times (e.g.
+## "Blue Robotics T200 Thruster".
+@export var base_name: String
 @export var version_number: String = "1.0.0"
+@export_category("Instance ")
+## The name of the specific instance of the module
+@export var instance_name: String
 @export var enabled: bool = true
 
 

@@ -20,13 +20,14 @@ extends Node
 ## Buoyant force of the ROV as a whole in kg.
 @export var buoyancy: float
 ## Moment of inertia of the ROV as a whole where X = roll, Y = pitch, and Z = yaw.
-@export var moment: Vector3
+@export var moment_of_inertia: Vector3
 
 # Mission Stats
 
 var global_position: Vector3
 var global_velocity: Vector3
 var relative_velocity: Vector3
+## Orientation of the ROV where X = roll to the left, Y = pitch nose up, and Z = yaw left.
 var rotation: Vector3
 var rotational_velocity: Vector3
 
@@ -37,6 +38,10 @@ var mission_start_time_seconds: float = 0.0
 
 @export var comm_protocol: AbstractComms
 var data_packets: Array[DataPacket]
+
+# Video Data
+
+@export var video_feed: AbstractVideoComms
 
 # Controller Outputs
 
@@ -64,7 +69,12 @@ var command_queue: Array[Command]
 
 
 func enter_testing() -> void:
-	# Tell all modules to initialize.
+	# Tell all modules to initialize their ROV counterparts.
 	# Tell the comm protocal to send the command queue.
-	
+	pass
+
+
+func enter_setup() -> void:
+	# Tell all modules to set up their internal variables and possibly return UIs
+	# for user settings changing like determining position and vector of thrusters.
 	pass

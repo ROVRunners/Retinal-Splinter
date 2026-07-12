@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bfvr4rwibdio5"]
 
 [ext_resource type="Script" uid="uid://cx16ypm3lir1d" path="res://abstract/rovs/rov.gd" id="1_ypbqn"]
-[ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_modules/command_module.gd" id="2_xa21r"]
+[ext_resource type="PackedScene" uid="uid://chjflh1gmmj04" path="res://tangible/command_modules/raspberry_pi_4b.tscn" id="2_f24jn"]
 [ext_resource type="Script" uid="uid://b6fd8wsp12gun" path="res://abstract/modules/thruster.gd" id="3_xa21r"]
-[ext_resource type="Script" uid="uid://djsw4hhfy3gdw" path="res://abstract/pins/gpio_pin.gd" id="4_7jhkn"]
 
 [sub_resource type="Curve" id="Curve_myfj0"]
 _limits = [-30.0, 40.0, -1.0, 1.0]
@@ -13,27 +12,56 @@ point_count = 18
 metadata/_snap_enabled = true
 metadata/_snap_count = 100
 
-[node name="ROV" type="Node" unique_id=320604600]
+[node name="ROV" type="Node" unique_id=320604600 node_paths=PackedStringArray("comm_protocol")]
 script = ExtResource("1_ypbqn")
+comm_protocol = NodePath("RaspberryPi4b/EtherMQTTComms")
 
-[node name="CommandModule" type="Node" parent="." unique_id=1559274447 node_paths=PackedStringArray("compatible_comms")]
-script = ExtResource("2_xa21r")
-compatible_cmds = Array[int]([0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-compatible_comms = [null, null]
-metadata/_custom_type_script = "uid://c88nems0ixlwq"
+[node name="RaspberryPi4b" parent="." unique_id=1371071823 node_paths=PackedStringArray("used_comms") instance=ExtResource("2_f24jn")]
+used_comms = NodePath("EtherMQTTComms")
 
-[node name="Thruster" type="Node" parent="CommandModule" unique_id=1085004114 node_paths=PackedStringArray("pin")]
+[node name="Thruster" type="Node" parent="." unique_id=1085004114 node_paths=PackedStringArray("pin")]
 script = ExtResource("3_xa21r")
 thrust_curve = SubResource("Curve_myfj0")
-thrust_unit_vector = Vector3(0.707, 0.707, 0)
-pin = NodePath("GPIOPin")
+pin = NodePath("../RaspberryPi4b/GPIOPin13")
 microseconds_default = 1500
-signal_upper_bound = 1900
-signal_lower_bound = 1100
-microseconds = 1500
 metadata/_custom_type_script = "uid://b6fd8wsp12gun"
 
-[node name="GPIOPin" type="Node" parent="CommandModule/Thruster" unique_id=676845080]
-script = ExtResource("4_7jhkn")
-pin_number = 4
-metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+[node name="Thruster2" type="Node" parent="." unique_id=225450671 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+thrust_curve = SubResource("Curve_myfj0")
+pin = NodePath("../RaspberryPi4b/GPIOPin16")
+microseconds_default = 1500
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[node name="Thruster3" type="Node" parent="." unique_id=1774924865 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+thrust_curve = SubResource("Curve_myfj0")
+pin = NodePath("../RaspberryPi4b/GPIOPin19")
+microseconds_default = 1500
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[node name="Thruster4" type="Node" parent="." unique_id=859732812 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+thrust_curve = SubResource("Curve_myfj0")
+pin = NodePath("../RaspberryPi4b/GPIOPin20")
+microseconds_default = 1500
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[node name="Thruster5" type="Node" parent="." unique_id=1574102773 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+thrust_curve = SubResource("Curve_myfj0")
+position = Vector3(-0.3, 0, 0)
+pin = NodePath("../RaspberryPi4b/GPIOPin21")
+microseconds_default = 1500
+microseconds_upper_bound = 1900
+microseconds_lower_bound = 1100
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[node name="Thruster6" type="Node" parent="." unique_id=1111903775 node_paths=PackedStringArray("pin")]
+script = ExtResource("3_xa21r")
+thrust_curve = SubResource("Curve_myfj0")
+pin = NodePath("../RaspberryPi4b/GPIOPin26")
+microseconds_default = 1500
+metadata/_custom_type_script = "uid://b6fd8wsp12gun"
+
+[editable path="RaspberryPi4b"]

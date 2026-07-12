@@ -17,7 +17,7 @@ The system should execute as follows:
 		Controllers optionally command specific modules to perform non-mobility-based actions like toggling claws and moving servos.
 		Mix over-all motor commands in the global then the relative control mixers (combining overlapping controller, PID, and autonomous commands)
 		Send commands to the specified mobility modules
-		Modules have the opportunity to modify them as needed before sending them to the ROV command queue
+		Modules have the opportunity to modify them as needed before sending them to the comms command queue
 		The currently active comm protocol sends all listed commands down.
 		Data packets are cleared in ppreparation for the next round
 		Loop restarts

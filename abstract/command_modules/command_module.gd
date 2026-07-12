@@ -1,11 +1,9 @@
+@icon("uid://dhjrd65fquqa3")
 class_name CmdModule
 extends Node
 
-@export var board_type: String
 @export var compatible_cmds: Array[AbstractComms.CmdIDList]
-@export var compatible_comms: Array[AbstractComms]
-
-var command_queue: Array[GPIOPin]
+@export var used_comms: AbstractComms
 
 enum BoardTypes {
 	ARDUINO_UNO,

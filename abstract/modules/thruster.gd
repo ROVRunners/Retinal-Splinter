@@ -7,10 +7,21 @@ extends PWMMicroModule
 ## Toggle if the output of the thruster should be reversed due to it being wired backwards or
 ## high pwm values otherwise translating to reversed direction.
 @export var reversed: bool = false
-## Position of the center of the thruster relative to the center of the ROV.
+## Position of the center of the thruster relative to the center of the ROV measured in meters.
 @export var position: Vector3
 ## Vector of length 1 describing the direction of thrust applied where X = Forwards, Y= Right, and Z = Up
-@export var thrust_unit_vector: Vector3
+var _thrust_unit_vector: Vector3 = Vector3(1, 0, 0)
+
+## Vector of length 1 describing the direction of thrust applied where X = Forwards, Y= Right, and Z = Up.
+## Auto-normalizes, but please don't rely on that too much...
+@export var thrust_unit_vector: Vector3:
+	get:
+		return _thrust_unit_vector
+	set(val):
+		if val != Vector3.ZERO:
+			_thrust_unit_vector = val.normalized()
+
+
 ## Efficiency value of the thruster compared to its rated thrust curve.
 @export_range(0, 1, .001) var efficiency: float = 1.0
 
@@ -18,6 +29,18 @@ extends PWMMicroModule
 var inverted_thrust_curve: Curve
 var max_forward_thrust: float = thrust_curve.get_point_position(-1).y
 var max_reverse_thrust: float = thrust_curve.get_point_position(0).y
+## Torque of the thruster on the ROV when the thruster is spinning forwards where
+## X = roll to the left, Y = pitch nose up, and Z = yaw left.
+var effective_forward_torque: float
+## Thrust of the thruster on the ROV along the axes when the thruster is spinning forwards where
+## X = Forwards, Y = Right, and Z = Up.
+var effective_forward_thrust: float
+## Torque of the thruster on the ROV when the thruster is spinning backwards where
+## X = roll to the left, Y = pitch nose up, and Z = yaw left.
+var effective_reverse_torque: float
+## Thrust of the thruster on the ROV along the axes when the thruster is spinning backwards where
+## X = Forwards, Y = Right, and Z = Up.
+var effective_reverse_thrust: float
 
 
 func _ready():
@@ -50,3 +73,16 @@ func _test_transposition() -> void:
 		var reverse_sample: float = inverted_thrust_curve.sample(thrust_curve_sample)
 		#print("Reverse sample at: \t", thrust_curve_sample, " \t=\t ", reverse_sample)
 		print("Difference: ", i/multiplier - reverse_sample)
+
+
+func _calc_thrust_and_torque() -> void:
+	var rov = self.get_parent()
+	if rov is ROV:
+		var center_of_mass_rel_pos: Vector3 = position - rov.center_of_mass
+		
+		
+		
+		#effective_torque
+	else:
+		print("Error! Thruster recalc is impossible because thruster parent is not an ROV!")
+		return

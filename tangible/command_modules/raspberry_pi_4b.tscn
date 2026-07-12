@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://chjflh1gmmj04"]
 
 [ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_modules/command_module.gd" id="1_1groy"]
-[ext_resource type="Script" uid="uid://0ngocnvhm0ww" path="res://abstract/comm_protocols/ethernet/ether_mqtt_comms.gd" id="2_530nk"]
+[ext_resource type="Script" uid="uid://0ngocnvhm0ww" path="res://abstract/comm_protocols/data/ethernet/ether_mqtt_comms.gd" id="2_530nk"]
 [ext_resource type="Script" uid="uid://djsw4hhfy3gdw" path="res://abstract/pins/gpio_pin.gd" id="3_1fhwu"]
 
 [node name="RaspberryPi4b" type="Node" unique_id=1371071823]
 script = ExtResource("1_1groy")
 metadata/_custom_type_script = "uid://c88nems0ixlwq"
 
-[node name="MQTTComms" type="Node" parent="." unique_id=62904959]
+[node name="EtherMQTTComms" type="Node" parent="." unique_id=62904959]
 script = ExtResource("2_530nk")
 metadata/_custom_type_script = "uid://0ngocnvhm0ww"
 
@@ -24,5 +24,155 @@ metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
 [node name="GPIOPin2" type="Node" parent="." unique_id=1856437419]
 script = ExtResource("3_1fhwu")
 pin_number = 2
-compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 7, 17])
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 7])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin3" type="Node" parent="." unique_id=1707655718]
+script = ExtResource("3_1fhwu")
+pin_number = 3
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 8])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin4" type="Node" parent="." unique_id=1747056588]
+script = ExtResource("3_1fhwu")
+pin_number = 4
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin5" type="Node" parent="." unique_id=496717279]
+script = ExtResource("3_1fhwu")
+pin_number = 5
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin6" type="Node" parent="." unique_id=1009096107]
+script = ExtResource("3_1fhwu")
+pin_number = 6
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin7" type="Node" parent="." unique_id=616214435]
+script = ExtResource("3_1fhwu")
+pin_number = 7
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 12])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin8" type="Node" parent="." unique_id=77755998]
+script = ExtResource("3_1fhwu")
+pin_number = 8
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 12])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin9" type="Node" parent="." unique_id=2089599272]
+script = ExtResource("3_1fhwu")
+pin_number = 9
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 10])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin10" type="Node" parent="." unique_id=1146171327]
+script = ExtResource("3_1fhwu")
+pin_number = 10
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 9])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin11" type="Node" parent="." unique_id=724218541]
+script = ExtResource("3_1fhwu")
+pin_number = 11
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 11])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin12" type="Node" parent="." unique_id=801266600]
+script = ExtResource("3_1fhwu")
+pin_number = 12
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin13" type="Node" parent="." unique_id=1894523660]
+script = ExtResource("3_1fhwu")
+pin_number = 13
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin14" type="Node" parent="." unique_id=1424661403]
+script = ExtResource("3_1fhwu")
+pin_number = 14
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 13])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin15" type="Node" parent="." unique_id=1713939367]
+script = ExtResource("3_1fhwu")
+pin_number = 15
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 14])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin16" type="Node" parent="." unique_id=1939810312]
+script = ExtResource("3_1fhwu")
+pin_number = 16
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 12])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin17" type="Node" parent="." unique_id=240642184]
+script = ExtResource("3_1fhwu")
+pin_number = 17
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 12])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin18" type="Node" parent="." unique_id=379883197]
+script = ExtResource("3_1fhwu")
+pin_number = 18
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 12])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin19" type="Node" parent="." unique_id=1420942730]
+script = ExtResource("3_1fhwu")
+pin_number = 19
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 10])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin20" type="Node" parent="." unique_id=493158471]
+script = ExtResource("3_1fhwu")
+pin_number = 20
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 9])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin21" type="Node" parent="." unique_id=2135882855]
+script = ExtResource("3_1fhwu")
+pin_number = 21
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6, 11])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin22" type="Node" parent="." unique_id=45112592]
+script = ExtResource("3_1fhwu")
+pin_number = 22
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin23" type="Node" parent="." unique_id=100560354]
+script = ExtResource("3_1fhwu")
+pin_number = 23
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin24" type="Node" parent="." unique_id=495401808]
+script = ExtResource("3_1fhwu")
+pin_number = 24
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin25" type="Node" parent="." unique_id=451878544]
+script = ExtResource("3_1fhwu")
+pin_number = 25
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin26" type="Node" parent="." unique_id=1873879207]
+script = ExtResource("3_1fhwu")
+pin_number = 26
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
+metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
+
+[node name="GPIOPin27" type="Node" parent="." unique_id=1131478954]
+script = ExtResource("3_1fhwu")
+pin_number = 27
+compatible_modes = Array[int]([1, 2, 3, 4, 5, 6])
 metadata/_custom_type_script = "uid://djsw4hhfy3gdw"
