@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1wlnueh4qerf"]
+
+[ext_resource type="Script" uid="uid://b6fd8wsp12gun" path="res://abstract/modules/thruster.gd" id="1_8cihf"]
+
+[sub_resource type="Curve" id="Curve_xlams"]
+_limits = [-30.0, 40.0, -1.0, 1.0]
+bake_resolution = 256
+_data = [Vector2(-1, -21), 0.0, 89.99997, 0, 1, Vector2(-0.96, -17.4), 89.99997, 52.500034, 1, 1, Vector2(-0.92, -15.3), 52.500034, 52.499958, 1, 1, Vector2(-0.88, -13.200001), 52.499958, 46.666668, 1, 1, Vector2(-0.82, -10.400001), 46.666668, 26.250011, 1, 1, Vector2(-0.74, -8.3), 26.250011, 20.999994, 1, 1, Vector2(-0.64, -6.2000003), 20.999994, 21.000008, 1, 1, Vector2(-0.54, -4.1000004), 21.000008, 11.666665, 1, 1, Vector2(-0.42000002, -2.7000005), 11.666665, 10.499999, 1, 1, Vector2(-0.22000001, -0.6000005), 10.499999, 2.727275, 1, 1, Vector2(0, 0), 2.727275, 4.4444423, 1, 1, Vector2(0.17999998, 0.7999995), 4.4444423, 10.0, 1, 1, Vector2(0.31999996, 2.1999993), 10.0, 14.999996, 1, 1, Vector2(0.45999998, 4.299999), 14.999996, 29.166664, 1, 1, Vector2(0.58, 7.799999), 29.166664, 42.77777, 1, 1, Vector2(0.76, 15.499999), 42.77777, 52.500023, 1, 1, Vector2(0.87999994, 21.8), 52.500023, 68.333336, 1, 1, Vector2(0.99999994, 30), 68.333336, 0.0, 1, 0]
+point_count = 18
+metadata/_snap_enabled = true
+metadata/_snap_count = 100
+
+[node name="BlueRoboticsT200" type="Node" unique_id=33141651]
+script = ExtResource("1_8cihf")
+thrust_curve = SubResource("Curve_xlams")
+position = Vector3(1, 0, 0)
+thrust_unit_vector = Vector3(1, 0, 0)
+microseconds_default = 1500
+microseconds_upper_bound = 1900
+microseconds_lower_bound = 1100
+base_name = "Blue Robotics T200 Thruster"

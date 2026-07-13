@@ -27,17 +27,19 @@ extends Node
 var global_position: Vector3
 var global_velocity: Vector3
 var relative_velocity: Vector3
-## Orientation of the ROV where X = roll to the left, Y = pitch nose up, and Z = yaw left.
+## The ROV's orientation where X = roll to the left, Y = pitch nose up, and Z = yaw left.
 var rotation: Vector3
+## Rate of change of the ROV's orientation where X = roll to the left, Y = pitch nose up, and Z = yaw left.
 var rotational_velocity: Vector3
 
-var mission_time_seconds: float = 0.0
+var mission_end_time_seconds: float = 0.0
 var mission_start_time_seconds: float = 0.0
 
 # Sensor Data
 
-@export var comm_protocol: AbstractComms
-var data_packets: Array[DataPacket]
+#@export var comm_protocol: AbstractComms
+#var data_packets: Array[DataPacket]
+@export var command_breakout: CommandBreakout
 
 # Video Data
 
@@ -58,15 +60,16 @@ var desired_relative_velocity: Vector3
 ## care about rotational motion want the ROV to move.
 var desired_rotational_velocity: Vector3
 
-# Command Mixers
+# Thrust Mixers
 
 @export var global_mixer: CommandMixer
 @export var relative_mixer: CommandMixer
 
-# Command queue
+# Signals
 
-var command_queue: Array[Command]
+signal loop_module(delta: float)
 
+# Functions
 
 func enter_testing() -> void:
 	# Tell all modules to initialize their ROV counterparts.
@@ -77,4 +80,8 @@ func enter_testing() -> void:
 func enter_setup() -> void:
 	# Tell all modules to set up their internal variables and possibly return UIs
 	# for user settings changing like determining position and vector of thrusters.
+	pass
+
+
+func _process(_delta: float) -> void:
 	pass

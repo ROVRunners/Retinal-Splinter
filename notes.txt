@@ -29,7 +29,11 @@ Add an on-screen checklist for mission tasks. Each task should have built-in seq
 
 
 "res://abstract/" -- Contains classes and abstract object to be set up in scenes elsewhere, such as
-	the general 'thruster.gd' which is the basis for all thruster-type objects.
-"res://tangible/" -- Contains scenes of set up objects to be instantiated, such as a T200 Blue
-	Robotics thruster with its thrust curve set.
-"res://user_interface/" -- Contains purely UI-related files
+	the general 'thruster.gd' which is the basis for all thruster-type objects. it also contains any
+	GUI elements specific to the module types, to be pulled from and used by the aforementioned set
+	up objects when they are instantiated.
+"res://tangible/" -- Contains scenes of the set up objects to be instantiated, such as a T200 Blue
+	Robotics thruster with its thrust curve set. Instantiated objects are stored in nodes and the
+	saved ROV tscn (scene) files.
+"res://user_interface/" -- Contains purely UI-related files, such as GUI scenes and scripts for
+	handling module GUI elements.

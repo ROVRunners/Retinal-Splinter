@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du0r7svwmv51l"
-path="res://.godot/imported/chip.png-07069bbdc2850de2072fa9ff49542325.ctex"
+uid="uid://dxwqy885h465m"
+path="res://.godot/imported/Outside Alligator Games Logo Colorized transparent background black text.png-213f55321d82d6e8c39338d71578a196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abstract/modules/chip.png"
-dest_files=["res://.godot/imported/chip.png-07069bbdc2850de2072fa9ff49542325.ctex"]
+source_file="res://assets/alligator_logos/Outside Alligator Games Logo Colorized transparent background black text.png"
+dest_files=["res://.godot/imported/Outside Alligator Games Logo Colorized transparent background black text.png-213f55321d82d6e8c39338d71578a196.ctex"]
 
 [params]
 
@@ -27,9 +27,9 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/channel_remap/red=4
-process/channel_remap/green=5
-process/channel_remap/blue=6
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
 process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false

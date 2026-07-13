@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1wlnueh4qerf"]
-
-[ext_resource type="Script" uid="uid://b6fd8wsp12gun" path="res://abstract/modules/thruster.gd" id="1_cgbud"]
-
-[node name="Thruster" type="Node"]
-script = ExtResource("1_cgbud")

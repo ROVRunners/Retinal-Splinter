@@ -15,6 +15,16 @@ extends Node
 @export var enabled: bool = true
 
 
-func send_command(cmd: AbstractComms.CmdIDList, args: PackedByteArray) -> void:
-	var command: Command = Command.new(cmd, args)
+# TODO: Make a function for receiving the 'check for missing requirements' command from the ROV.
+
+
+# TODO: Make a function for receiving the 'initialization' command from the ROV.
+
+
+# TODO: Make a function for receiving the 'loop' command from the ROV.
+
+
+# TODO: Make a generalized function for receiving commands from controllers.
+#func send_command(cmd: AbstractComms.CmdIDList, args: PackedByteArray) -> void:
+	#var command: Command = Command.new(cmd, args)
 	

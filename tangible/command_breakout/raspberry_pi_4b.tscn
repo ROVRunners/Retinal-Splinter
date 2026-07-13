@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chjflh1gmmj04"]
 
-[ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_modules/command_module.gd" id="1_1groy"]
+[ext_resource type="Script" uid="uid://c88nems0ixlwq" path="res://abstract/command_breakouts/command_breakout.gd" id="1_1groy"]
 [ext_resource type="Script" uid="uid://0ngocnvhm0ww" path="res://abstract/comm_protocols/data/ethernet/ether_mqtt_comms.gd" id="2_530nk"]
 [ext_resource type="Script" uid="uid://djsw4hhfy3gdw" path="res://abstract/pins/gpio_pin.gd" id="3_1fhwu"]
 
