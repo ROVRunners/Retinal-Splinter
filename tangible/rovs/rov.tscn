@@ -10,42 +10,42 @@ command_breakout = NodePath("RaspberryPi4b")
 
 [node name="RaspberryPi4b" parent="." unique_id=1371071823 node_paths=PackedStringArray("comm_protocol") instance=ExtResource("2_f24jn")]
 compatible_cmds = Array[int]([0, 10, 11, 12, 13, 20, 21, 22, 23, 30, 31, 32, 40, 41, 42, 43, 44, 45, 46])
-comm_protocol = NodePath("EtherMQTTComms")
+comm_protocol = NodePath("Comms/EtherMQTTComms")
 
 [node name="FrontLeft" parent="." unique_id=33141651 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0.3, -0.2, 0)
 thrust_unit_vector = Vector3(0.707, 0.707, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin13")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin13")
 instance_name = "Front Left Thruster"
 
 [node name="FrontRight" parent="." unique_id=1383039605 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0.3, 0.2, 0)
 thrust_unit_vector = Vector3(0.707, -0.707, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin16")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin16")
 instance_name = "Front Right Thruster"
 
 [node name="RearLeft" parent="." unique_id=378361179 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(-0.3, -0.2, 0)
 thrust_unit_vector = Vector3(-0.707, 0.707, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin19")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin19")
 instance_name = "Rear Left Thruster"
 
 [node name="RearRight" parent="." unique_id=743614785 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(-0.3, 0.2, 0)
 thrust_unit_vector = Vector3(-0.707, -0.707, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin20")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin20")
 instance_name = "Rear Right Thruster"
 
 [node name="FrontVertical" parent="." unique_id=2141227270 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0, 0.2, 0.2)
 thrust_unit_vector = Vector3(0, 1, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin21")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin21")
 instance_name = "Front Vertical Thruster"
 
 [node name="RearVertical" parent="." unique_id=921664387 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0, -0.2, 0.2)
 thrust_unit_vector = Vector3(0, 1, 0)
-pin = NodePath("../RaspberryPi4b/GPIOPin26")
+pin = NodePath("../RaspberryPi4b/Pins/GPIOPin26")
 instance_name = "Rear Vertical Thruster"
 
 [editable path="RaspberryPi4b"]
