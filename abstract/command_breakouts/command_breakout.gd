@@ -4,3 +4,7 @@ extends Node
 
 @export var compatible_cmds: Array[AbstractComms.CmdIDList]
 @export var comm_protocol: AbstractComms
+
+
+func connect_to_rov() -> void:
+	pass

@@ -3,7 +3,12 @@ class_name CommandMixer
 extends Node
 
 @export var mobility_modules: Dictionary[AbstractModule, ModuleTypes]
-@export_enum("Global", "Relative") var mixer_type: int
+#@export var mobility_modules: Array[AbstractModule]
+#@export var rov_object: ROV
+
+var vector_buffer: Array[MotionCommand]
+#var connected: bool = false
+#var mixer_group_name: StringName = ROV.group_names[ROV.Groups.MIXERS]
 
 enum ModuleTypes {
 	## Variable Velocity Control
@@ -36,9 +41,13 @@ enum ModuleTypes {
 	STEPPER_WHEEL_MOTOR,
 }
 
+## Add a motion request to this mixer's buffer. The buffered motions will be 
+func add_motion(motion: MotionCommand) -> void:
+	vector_buffer.append(motion)
+
 ## Grabs the relevant input vectors based on its mixer type and mixes them into the devices given.
 ## If it's global and cannot fulfill an axis of the global vector, it does what it can and returns
 ## the remainder it could not fulfill, rotated based on the ROV's orientation, to the relative mixer
 ## to handle.
 @abstract
-func mix_inputs() -> Vector3
+func mix_inputs() -> void

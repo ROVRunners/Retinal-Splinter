@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://br3qgnpgmyhlb"]
+
+[ext_resource type="Script" uid="uid://d0sjpd3iahpqi" path="res://tangible/mixers/basic_local_mixer/basic_local_mixer.gd" id="1_8rlek"]
+
+[node name="BasicLocalMixer" type="Node" unique_id=1397218760]
+script = ExtResource("1_8rlek")

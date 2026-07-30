@@ -35,45 +35,60 @@ var rotational_velocity: Vector3
 var mission_end_time_seconds: float = 0.0
 var mission_start_time_seconds: float = 0.0
 
-# Sensor Data
+# ROV Link
 
-#@export var comm_protocol: AbstractComms
-#var data_packets: Array[DataPacket]
 @export var command_breakout: CommandBreakout
 
 # Video Data
 
 @export var video_feed: AbstractVideoComms
 
-# Controller Outputs
+# Command Mixer
 
-## An un-normalized vector added to by all of the Controllers representing how the Controllers which
-## care about global position want the ROV to move.
-var desired_global_position: Vector3
-## An un-normalized vector added to by all of the Controllers representing how the Controllers which
-## care about global position want the ROV to move.
-var desired_global_velocity: Vector3
-## An un-normalized vector added to by all of the Controllers representing how the Controllers which
-## care about relative motion want the ROV to move.
-var desired_relative_velocity: Vector3
-## An un-normalized vector added to by all of the Controllers representing how the Controllers which
-## care about rotational motion want the ROV to move.
-var desired_rotational_velocity: Vector3
-
-# Thrust Mixers
-
-@export var global_mixer: CommandMixer
-@export var relative_mixer: CommandMixer
+@export var command_mixer: CommandMixer
 
 # Signals
 
-signal loop_module(delta: float)
+	# Setup
+	
+	# Initialization
+## A signal to all connected modules to send their GUI elements to the HUD.
+signal initialize_runtime_gui
+## A signal to the comms and vidcomms to tell them to start trying to connect to the ROV.
+signal connect_comms
+## A signal to all modules to perform one-time startup procedures like setting up busses or calibrating thrusters/sensors.
+## All modules should stay in testing mode
+signal enter_testing
+
+signal begin_mission
+	
+	# Runtime
+signal send_heartbeat
+signal loop_modules(delta: float)
+signal controllers_update
+#signal mix_commands
+
+# Groups
+
+#enum Groups {
+	#MIXERS,
+	#CONTROLLERS,
+	#MODULES,
+	#COMMS,
+	#VIDCOMMS,
+#}
+#const group_names: Dictionary[Groups, StringName] = {
+	#Groups.MIXERS: "mixers",
+	#Groups.CONTROLLERS: "controllers",
+	#Groups.MODULES: "modules",
+	#Groups.COMMS: "comms",
+	#Groups.VIDCOMMS: "vidcomms",
+#}
 
 # Functions
 
-func enter_testing() -> void:
-	# Tell all modules to initialize their ROV counterparts.
-	# Tell the comm protocal to send the command queue.
+func _ready() -> void:
+	#get_tree().call_group(group_names[Groups.MIXERS], "mix_inputs")
 	pass
 
 
@@ -83,5 +98,19 @@ func enter_setup() -> void:
 	pass
 
 
+func initialize_rov() -> void:
+	command_breakout.connect_to_rov()
+	
+
+#func begin_mission() -> void:
+	## Tell all modules to initialize their ROV counterparts.
+	## Tell the comm protocal to send the command queue.
+	#exit_testing.emit()
+
+
 func _process(_delta: float) -> void:
-	pass
+	send_heartbeat.emit()
+	loop_modules.emit(_delta)
+	controllers_update.emit()
+	command_mixer.mix_inputs()
+	

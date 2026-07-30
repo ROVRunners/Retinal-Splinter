@@ -14,12 +14,17 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ComponentList" type="Control" parent="." unique_id=392279321]
+[node name="ComponentChooser" type="Control" parent="." unique_id=392279321]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ComponentList2" type="Control" parent="." unique_id=512691249]
+[node name="ComponentSettings" type="Control" parent="." unique_id=512691249]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainFeed" type="Control" parent="." unique_id=971061966]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

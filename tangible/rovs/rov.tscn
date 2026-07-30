@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cx16ypm3lir1d" path="res://abstract/rovs/rov.gd" id="1_ypbqn"]
 [ext_resource type="PackedScene" uid="uid://chjflh1gmmj04" path="res://tangible/command_breakout/raspberry_pi_4b.tscn" id="2_f24jn"]
 [ext_resource type="PackedScene" uid="uid://c1wlnueh4qerf" path="res://tangible/modules/pwm_micro/thrusters/blue_robotics_t200.tscn" id="3_f24jn"]
+[ext_resource type="Script" uid="uid://dfg7ya6pve3bw" path="res://abstract/controllers/abstract_controller.gd" id="3_gresn"]
+[ext_resource type="Script" uid="uid://yfxsn3rywyf2" path="res://abstract/comm_protocols/video/abstract_video_comms.gd" id="4_nkxn0"]
+[ext_resource type="PackedScene" uid="uid://br3qgnpgmyhlb" path="res://tangible/mixers/basic_local_mixer/basic_local_mixer.tscn" id="5_nkxn0"]
 
 [node name="ROV" type="Node" unique_id=320604600 node_paths=PackedStringArray("command_breakout")]
 script = ExtResource("1_ypbqn")
@@ -11,6 +14,22 @@ command_breakout = NodePath("RaspberryPi4b")
 [node name="RaspberryPi4b" parent="." unique_id=1371071823 node_paths=PackedStringArray("comm_protocol") instance=ExtResource("2_f24jn")]
 compatible_cmds = Array[int]([0, 10, 11, 12, 13, 20, 21, 22, 23, 30, 31, 32, 40, 41, 42, 43, 44, 45, 46])
 comm_protocol = NodePath("Comms/EtherMQTTComms")
+
+[node name="Controllers" type="Node" parent="RaspberryPi4b" unique_id=1496069349]
+
+[node name="AbstractController" type="Node" parent="RaspberryPi4b/Controllers" unique_id=650906623]
+script = ExtResource("3_gresn")
+metadata/_custom_type_script = "uid://dfg7ya6pve3bw"
+
+[node name="VidComms" type="Node" parent="RaspberryPi4b" unique_id=1309094524]
+
+[node name="AbstractVideoComms" type="Node" parent="RaspberryPi4b/VidComms" unique_id=1210747149]
+script = ExtResource("4_nkxn0")
+metadata/_custom_type_script = "uid://yfxsn3rywyf2"
+
+[node name="Mixers" type="Node" parent="RaspberryPi4b" unique_id=929883434]
+
+[node name="BasicLocalMixer" parent="RaspberryPi4b/Mixers" unique_id=1397218760 instance=ExtResource("5_nkxn0")]
 
 [node name="FrontLeft" parent="." unique_id=33141651 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0.3, -0.2, 0)
