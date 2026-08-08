@@ -10,6 +10,8 @@ var vector_buffer: Array[MotionCommand]
 #var connected: bool = false
 #var mixer_group_name: StringName = ROV.group_names[ROV.Groups.MIXERS]
 
+#var unit_thrust_matrix: Float32Matrix
+
 enum ModuleTypes {
 	## Variable Velocity Control
 	PWM_MICRO_THRUSTER,

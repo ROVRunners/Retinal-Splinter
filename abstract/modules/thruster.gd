@@ -81,23 +81,17 @@ func _update_torque_constant() -> void:
 	if rov is ROV:
 		var center_of_mass_rel_pos: Vector3 = rov.center_of_mass - position
 		
-		var tuv_x = Vector3(thrust_unit_vector.x, 0, 0)
-		var tuv_y = Vector3(0, thrust_unit_vector.y, 0)
-		var tuv_z = Vector3(0, 0, thrust_unit_vector.z)
-		
-		var tuv_xy = tuv_x + tuv_y
-		var tuv_xz = tuv_x + tuv_z
-		var tuv_yz = tuv_y + tuv_z
-		
-		torque_vector_constant = Vector3(
-			# Roll
-			tuv_xy.cross(center_of_mass_rel_pos).z,  # Definitely wrong btw
-			# Pitch
-			0,
-			# Yaw
-			0,
-		)
+		torque_vector_constant = center_of_mass_rel_pos.cross(thrust_unit_vector)
 		
 	else:
 		print("Error! Thruster recalc is impossible because thruster parent is not an ROV!")
 		return
+
+
+func set_thrust(thrust: float) -> void:
+	var millis: int = inverted_thrust_curve.sample(thrust)
+	set_millis(millis)
+
+
+func set_millis(millis: int) -> void:
+	pass
