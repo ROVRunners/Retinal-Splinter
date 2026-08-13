@@ -11,9 +11,9 @@
 script = ExtResource("1_ypbqn")
 command_breakout = NodePath("RaspberryPi4b")
 
-[node name="RaspberryPi4b" parent="." unique_id=1371071823 node_paths=PackedStringArray("comm_protocol") instance=ExtResource("2_f24jn")]
+[node name="RaspberryPi4b" parent="." unique_id=1371071823 node_paths=PackedStringArray("rov_comm") instance=ExtResource("2_f24jn")]
 compatible_cmds = Array[int]([0, 10, 11, 12, 13, 20, 21, 22, 23, 30, 31, 32, 40, 41, 42, 43, 44, 45, 46])
-comm_protocol = NodePath("Comms/EtherMQTTComms")
+rov_comm = NodePath("Comms/EtherMQTTComms")
 
 [node name="Controllers" type="Node" parent="RaspberryPi4b" unique_id=1496069349]
 

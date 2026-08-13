@@ -25,6 +25,347 @@ config/icon="res://icon.svg"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[input]
+
+"Stick Right"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+"Stick Left"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+"Stick Forwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+"Stick Backwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+"Stick Yaw Left"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":-1.0,"script":null)
+]
+}
+"Stick Yaw Right"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+]
+}
+"Left Throttle Forwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+"Left Throttle Backwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+"Right Throttle Forwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+"Right Throttle Backwards"={
+"deadzone": 0.05,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+Slide={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":32,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 1"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":5,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 2"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 3"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":7,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 4"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":8,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 5"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Switch 6"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 1 Up"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":11,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 1 Down"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":12,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 2 Up"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":13,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 2 Down"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 3 Up"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":15,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 3 Down"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":16,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 4 Up"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":17,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Toggle 4 Down"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":18,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+"Rotary 1 Right"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
+]
+}
+"Rotary 1 Left"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":-1.0,"script":null)
+]
+}
+"Rotary 2 Right"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
+}
+"Rotary 2 Left"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":-1.0,"script":null)
+]
+}
+"Rotary 3 High"={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":6,"axis_value":1.0,"script":null)
+]
+}
+"Rotary 3 Low"={
+"deadzone": 0.2,
+"events": []
+}
+"Rotary 4 Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Rotary 4 Down"={
+"deadzone": 0.2,
+"events": []
+}
+"POV Left"={
+"deadzone": 0.2,
+"events": []
+}
+"POV Right"={
+"deadzone": 0.2,
+"events": []
+}
+"POV Up"={
+"deadzone": 0.2,
+"events": []
+}
+"POV Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 1 Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 1 Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 1 Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 1 Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 2 Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 2 Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 2 Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 2 Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 3 Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 3 Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 3 Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 3 Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 4 Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 4 Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 4 Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Hat 4 Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Mouse Stick Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Mouse Stick Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Mouse Stick Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Mouse Stick Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Mouse Stick Click"={
+"deadzone": 0.2,
+"events": []
+}
+"Button A"={
+"deadzone": 0.2,
+"events": []
+}
+"Button B"={
+"deadzone": 0.2,
+"events": []
+}
+"Button C"={
+"deadzone": 0.2,
+"events": []
+}
+"Button D"={
+"deadzone": 0.2,
+"events": []
+}
+"Button E"={
+"deadzone": 0.2,
+"events": []
+}
+"Button F"={
+"deadzone": 0.2,
+"events": []
+}
+"Button G"={
+"deadzone": 0.2,
+"events": []
+}
+"Button H"={
+"deadzone": 0.2,
+"events": []
+}
+"Button I"={
+"deadzone": 0.2,
+"events": []
+}
+"Button K Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Button K Down"={
+"deadzone": 0.2,
+"events": []
+}
+"Button Pinky"={
+"deadzone": 0.2,
+"events": []
+}
+Trigger={
+"deadzone": 0.2,
+"events": []
+}
+"Throttle Scroll Forward"={
+"deadzone": 0.2,
+"events": []
+}
+"Throttle Scroll Backward"={
+"deadzone": 0.2,
+"events": []
+}
+"Stick C Left"={
+"deadzone": 0.2,
+"events": []
+}
+"Stick C Right"={
+"deadzone": 0.2,
+"events": []
+}
+"Stick C Up"={
+"deadzone": 0.2,
+"events": []
+}
+"Stick C Down"={
+"deadzone": 0.2,
+"events": []
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,6 +1,6 @@
 @abstract
 class_name PWMMicroModule
-extends AbstractModule
+extends ROVModule
 
 @export var pin: GPIOPin
 

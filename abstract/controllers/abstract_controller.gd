@@ -1,5 +1,5 @@
-class_name AbstractController
-extends Node
+class_name Controller
+extends ROVModule
 
 
-@export var mixers: Dictionary[String, CommandMixer]
+#@export var mixers: Dictionary[String, CommandMixer]

@@ -1,5 +1,5 @@
 @abstract
-class_name AbstractComms
+class_name ROVComm
 extends Node
 
 

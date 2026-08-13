@@ -1,2 +1,2 @@
-class_name AbstractVideoComms
-extends Node
+class_name VideoComm
+extends ROVModule

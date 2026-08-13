@@ -1,5 +1,5 @@
 class_name EtherMQTTComms
-extends AbstractComms
+extends ROVComm
 
 
 @export var mqtt_server_ip: String = "192.168.1.200"

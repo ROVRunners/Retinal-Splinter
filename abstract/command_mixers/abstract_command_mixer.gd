@@ -2,7 +2,7 @@
 class_name CommandMixer
 extends Node
 
-@export var mobility_modules: Dictionary[AbstractModule, ModuleTypes]
+@export var mobility_modules: Dictionary[ROVModule, ModuleTypes]
 #@export var mobility_modules: Array[AbstractModule]
 #@export var rov_object: ROV
 

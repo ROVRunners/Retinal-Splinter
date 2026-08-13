@@ -41,7 +41,11 @@ var mission_start_time_seconds: float = 0.0
 
 # Video Data
 
-@export var video_feed: AbstractVideoComms
+@export var video_feed: VideoComm
+
+# Command Mixer
+
+@export var controllers: Array[Controller]
 
 # Command Mixer
 

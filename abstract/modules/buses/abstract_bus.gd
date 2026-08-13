@@ -1,6 +1,6 @@
 @abstract
-class_name AbstractBus
-extends AbstractModule
+class_name DataBus
+extends ROVModule
 
 
-signal initialization_complete
+signal bus_initialized

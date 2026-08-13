@@ -1,2 +1,2 @@
 class_name I2CBus
-extends AbstractBus
+extends DataBus

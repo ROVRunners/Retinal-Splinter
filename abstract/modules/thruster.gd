@@ -6,7 +6,9 @@ extends PWMMicroModule
 @export var thrust_curve: Curve = Curve.new()
 ## Toggle if the output of the thruster should be reversed due to it being wired backwards or
 ## high pwm values otherwise translating to reversed direction.
+## Currently non-functional!
 @export var reversed: bool = false
+
 ## Position of the center of the thruster relative to the center of the ROV measured in meters.
 @export var position: Vector3:
 	get:
@@ -15,8 +17,6 @@ extends PWMMicroModule
 		_position = val
 		_update_torque_constant()
 var _position: Vector3
-## Vector of length 1 describing the direction of thrust applied where X = Forwards, Y= Right, and Z = Up
-var _thrust_unit_vector: Vector3 = Vector3(1, 0, 0)
 
 ## Vector of length 1 describing the direction of thrust applied where X = Forwards, Y= Right, and Z = Up.
 ## Auto-normalizes, but please don't rely on that too much...
@@ -27,6 +27,8 @@ var _thrust_unit_vector: Vector3 = Vector3(1, 0, 0)
 		if val != Vector3.ZERO:
 			_thrust_unit_vector = val.normalized()
 			_update_torque_constant()
+## Vector of length 1 describing the direction of thrust applied where X = Forwards, Y= Right, and Z = Up
+var _thrust_unit_vector: Vector3 = Vector3(1, 0, 0)
 
 
 ## Efficiency value of the thruster compared to its rated thrust curve.
@@ -89,7 +91,7 @@ func _update_torque_constant() -> void:
 
 
 func set_thrust(thrust: float) -> void:
-	var millis: int = inverted_thrust_curve.sample(thrust)
+	var millis: int = round(inverted_thrust_curve.sample(thrust))
 	set_millis(millis)
 
 

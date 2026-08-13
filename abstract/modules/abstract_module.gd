@@ -1,6 +1,6 @@
 @icon("uid://du0r7svwmv51l")
 @abstract
-class_name AbstractModule
+class_name ROVModule
 extends Node
 
 
