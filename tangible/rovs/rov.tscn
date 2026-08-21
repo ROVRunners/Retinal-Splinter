@@ -29,7 +29,11 @@ metadata/_custom_type_script = "uid://yfxsn3rywyf2"
 
 [node name="Mixers" type="Node" parent="RaspberryPi4b" unique_id=929883434]
 
-[node name="BasicLocalMixer" parent="RaspberryPi4b/Mixers" unique_id=1397218760 instance=ExtResource("5_nkxn0")]
+[node name="BasicLocalMixer" parent="RaspberryPi4b/Mixers" unique_id=1397218760 node_paths=PackedStringArray("mobility_modules") instance=ExtResource("5_nkxn0")]
+mobility_modules = {
+NodePath("../../../FrontLeft"): 0,
+NodePath("../../../FrontRight"): 0
+}
 
 [node name="FrontLeft" parent="." unique_id=33141651 node_paths=PackedStringArray("pin") instance=ExtResource("3_f24jn")]
 position = Vector3(0.3, -0.2, 0)

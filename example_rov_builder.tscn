@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cthhi1lrelg3l"]
+
+[ext_resource type="PackedScene" uid="uid://bfvr4rwibdio5" path="res://tangible/rovs/rov.tscn" id="1_431pm"]
+
+[node name="ExampleROVBuilder" type="Node" unique_id=344020627]
+
+[node name="Options" type="Node" parent="." unique_id=1539024095]
+
+[node name="ControlBreakouts" type="Node" parent="Options" unique_id=1863832963]
+
+[node name="Communicators" type="Node" parent="Options" unique_id=1023941031]
+
+[node name="Controllers" type="Node" parent="Options" unique_id=1185807195]
+
+[node name="Mixers" type="Node" parent="Options" unique_id=1069031895]
+
+[node name="Modules" type="Node" parent="Options" unique_id=1562543413]
+
+[node name="ROV" parent="." unique_id=320604600 instance=ExtResource("1_431pm")]
+
+[node name="BasicLocalMixer" parent="ROV/RaspberryPi4b/Mixers" parent_id_path=PackedInt32Array(320604600, 929883434) index="0" unique_id=1397218760 node_paths=PackedStringArray("mobility_modules")]
+mobility_modules = {
+NodePath("../../../FrontLeft"): 0,
+NodePath("../../../FrontRight"): 0
+}
+
+[editable path="ROV"]
+[editable path="ROV/RaspberryPi4b"]

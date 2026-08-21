@@ -1,2 +1,2 @@
 class_name SurfaceModule
-extends Node
+extends ROVModule

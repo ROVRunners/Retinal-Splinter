@@ -6,7 +6,7 @@ extends ROVModule
 
 var _microseconds_upper: int = 2000
 var _microseconds_lower: int = 1000
-@export var microseconds_default: int = int(_microseconds_upper + _microseconds_lower) / 2
+@export var microseconds_default: int = int((_microseconds_upper + _microseconds_lower) / 2)
 var _microseconds: int = microseconds_default
 
 @export var microseconds_upper_bound: int:
