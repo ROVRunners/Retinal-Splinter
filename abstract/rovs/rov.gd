@@ -39,14 +39,6 @@ var mission_start_time_seconds: float = 0.0
 
 @export var command_breakout: CommandBreakout
 
-# Video Data
-
-@export var video_feed: VideoComm
-
-# Command Mixer
-
-@export var controllers: Array[Controller]
-
 # Command Mixer
 
 @export var command_mixer: CommandMixer
@@ -72,24 +64,16 @@ signal loop_modules(delta: float)
 signal controllers_update
 #signal mix_commands
 
-# Groups
 
-#enum Groups {
-	#MIXERS,
-	#CONTROLLERS,
-	#MODULES,
-	#COMMS,
-	#VIDCOMMS,
-#}
-#const group_names: Dictionary[Groups, StringName] = {
-	#Groups.MIXERS: "mixers",
-	#Groups.CONTROLLERS: "controllers",
-	#Groups.MODULES: "modules",
-	#Groups.COMMS: "comms",
-	#Groups.VIDCOMMS: "vidcomms",
-#}
+# External Functions
 
-# Functions
+
+# TODO: Implement
+func add_gui_elements(icon, positional, settings, hud) -> void:
+	pass
+
+
+# Internal Functions
 
 func _ready() -> void:
 	#get_tree().call_group(group_names[Groups.MIXERS], "mix_inputs")

@@ -18,6 +18,18 @@
 
 [node name="ROV" parent="." unique_id=320604600 instance=ExtResource("1_431pm")]
 
+[node name="RaspberryPi4b" parent="ROV" index="0" unique_id=1371071823]
+base_name = null
+version_number = null
+instance_name = null
+enabled = null
+
+[node name="AbstractVideoComms" parent="ROV/RaspberryPi4b/VidComms" parent_id_path=PackedInt32Array(320604600, 1309094524) index="0" unique_id=1210747149]
+base_name = null
+version_number = null
+instance_name = null
+enabled = null
+
 [node name="BasicLocalMixer" parent="ROV/RaspberryPi4b/Mixers" parent_id_path=PackedInt32Array(320604600, 929883434) index="0" unique_id=1397218760 node_paths=PackedStringArray("mobility_modules")]
 mobility_modules = {
 NodePath("../../../FrontLeft"): 0,
