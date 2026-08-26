@@ -35,6 +35,22 @@ var rotational_velocity: Vector3
 var mission_end_time_seconds: float = 0.0
 var mission_start_time_seconds: float = 0.0
 
+# Misc. Variables
+
+var max_execution_tier: int = 0
+
+# Enums
+
+enum ExecTiers {
+	DISABLED = -1,
+	COMMS = 0,
+	BUSSES = 4,
+	GENERAL = 8,
+	MIXER = 12,
+	CONTROLLERS = 16,
+	SENSORS = 20,
+}
+
 # ROV Link
 
 @export var command_breakout: CommandBreakout
@@ -60,8 +76,8 @@ signal begin_mission
 	
 	# Runtime
 signal send_heartbeat
-signal loop_modules(delta: float)
-signal controllers_update
+signal loop_modules(delta: float, execution_tier: int)
+#signal controllers_update
 #signal mix_commands
 
 
@@ -71,6 +87,10 @@ signal controllers_update
 # TODO: Implement
 func add_gui_elements(icon, positional, settings, hud) -> void:
 	pass
+
+
+func module_execution_check_in(module: ROVModule) -> void:
+	max_execution_tier = max(max_execution_tier, module.execution_tier)
 
 
 # Internal Functions
@@ -87,7 +107,7 @@ func enter_setup() -> void:
 
 
 func initialize_rov() -> void:
-	command_breakout.connect_to_rov()
+	command_breakout.connect_to_rov(self)
 	
 
 #func begin_mission() -> void:
@@ -98,7 +118,8 @@ func initialize_rov() -> void:
 
 func _process(_delta: float) -> void:
 	send_heartbeat.emit()
-	loop_modules.emit(_delta)
-	controllers_update.emit()
+	for i in range(30, -1, -1):
+		loop_modules.emit(_delta, i)
+	#controllers_update.emit()
 	command_mixer.mix_inputs()
 	
